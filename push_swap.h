@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:15:02 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 04:47:38 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:16:44 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void add_last(t_node **node, t_node *to_add);
 void add_front(t_node **node, t_node *to_add);
 void push2dot0(t_node **no1, t_node **no2, char *str);
 void push(t_node **send, t_node **recep);
+void rotate(t_node **no, char *str);
 
 #endif

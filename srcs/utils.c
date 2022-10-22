@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:47:00 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 04:47:13 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/22 05:15:12 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,23 @@ void push(t_node **send, t_node **recep)
 void push2dot0(t_node **no1, t_node **no2, char *str)
 {
 	t_node *temp;
-
+	(void)str;
 	if (*no1 == 0)
 		return;
 	temp = (*no1)->next;
 	(*no1)->next = *no2;
 	*no2 = *no1;
 	*no1 = temp;
-	printf("%s\n", str);
+	// printf("%s\n", str);
+}
+
+void rotate(t_node **no, char *str)
+{
+	(void)str;
+	t_node *temp;
+	
+	temp = (*no)->next;
+	find_last(*no)->next = *no;
+	(*no)->next = NULL;
+	*no = temp;
 }
