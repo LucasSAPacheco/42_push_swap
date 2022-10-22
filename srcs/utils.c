@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:47:00 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 05:15:12 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/22 06:34:24 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,27 @@ void rotate(t_node **no, char *str)
 	temp = (*no)->next;
 	find_last(*no)->next = *no;
 	(*no)->next = NULL;
+	*no = temp;
+}
+
+void swap(t_node **no, char *str)
+{
+	(void)str;
+	t_node *temp;
+
+	temp = (*no)->next;
+	(*no)->next = (*no)->next->next;
+	temp->next = (*no);
+	(*no) = temp;
+}
+
+void r_rotate(t_node **no, char *str)
+{
+	(void)str;
+	t_node *temp;
+
+	temp = find_last(*no);
+	before_last(*no)->next = NULL;
+	temp->next = *no;
 	*no = temp;
 }
