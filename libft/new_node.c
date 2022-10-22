@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_front.c                                        :+:      :+:    :+:   */
+/*   new_node.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 03:43:30 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 03:59:10 by lsantana         ###   ########.fr       */
+/*   Created: 2022/10/22 01:56:14 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/22 04:14:44 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void add_front(t_node **node, t_node *to_add)
+t_node *new_node(int num)
 {
-	if (to_add == 0)
-		return ;
-	if (*node == 0)
-	{
-		*node = to_add;
-		return ;
-	}
-	to_add->next = *node;
-	*node = to_add;
+	t_node *new;
+	
+	new = (t_node *)malloc(sizeof(t_node));
+	if (!new)
+		return (NULL);
+	new->value = num;
+	new->next = 0;
+	return (new);
 }

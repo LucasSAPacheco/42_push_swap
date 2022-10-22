@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:00:59 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 02:42:37 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/22 04:46:57 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,19 +41,7 @@ void print_no(t_node *no)
 	printf("\n-----------------------\n");
 }
 
-void push(t_node **send, t_node **recep)
-{
-	t_node *aux;
-	t_node *temp;
-	
-	aux = new_list(find_last(*send)->value);
-	add_last(recep, aux);
-	temp = *send;
-	while (temp->next->next)
-		temp = temp->next;
-	free(temp->next);
-	temp->next = 0;
-}
+
 
 int main(void)
 {
@@ -62,12 +50,18 @@ int main(void)
 
 	no1 = 0;
 	no2 = 0;
-	add_last(&no1, new_list(10));
-	add_last(&no1, new_list(2));
-	add_last(&no1, new_list(155));
-
-	push(&no1, &no2);
-	push(&no1, &no2);
+	// add_last(&no1, new_node(10));
+	// add_last(&no1, new_node(2));
+	// add_last(&no1, new_node(155));
+	// add_front(&no1, new_node(36));
+	// add_front(&no1, new_node(69));
+	// add_front(&no1, new_node(100));
+	printf("Antes do push\n");
+	print_no(no1);
+	print_no(no2);
+	push2dot0(&no1, &no2, "pb");
+	// push2dot0(&no1, &no2);
+	printf("Depois do push\n");
 	print_no(no1);
 	print_no(no2);
 	free_nodes(no1);

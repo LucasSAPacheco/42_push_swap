@@ -1,1 +1,1 @@
-gcc -g3 push_swap.c libft/add_last.c libft/find_last.c libft/new_list.c && ./a.out
+gcc -g3 push_swap.c libft/add_last.c libft/find_last.c libft/new_node.c libft/add_front.c srcs/utils.c && ./a.out
