@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   add_last.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 19:48:40 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/21 05:51:28 by lsantana         ###   ########.fr       */
+/*   Created: 2022/10/22 02:02:16 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/22 02:12:55 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void add_last(t_node **node, t_node *to_add)
 {
-	t_list	*aux;
-
-	if (!new)
-		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	aux = ft_lstlast(*lst);
-	aux->next = new;
+	if (to_add == 0)
+		return;
+	if (*node == 0)
+		*node = to_add;
+	else
+		find_last(*node)->next = to_add;
 }

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   find_last.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 02:15:02 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 02:13:44 by lsantana         ###   ########.fr       */
+/*   Created: 2022/10/22 01:59:15 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/22 02:22:34 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct s_node
+t_node *find_last(t_node *node)
 {
-	int				value;
-	struct s_node	*next;
-}			t_node;
-
-t_node *new_list(int num);
-t_node *find_last(t_node *node);
-void add_last(t_node **node, t_node *to_add);
-
-#endif
+	if (node == 0)
+		return (NULL);
+	while (node->next)
+		node = node->next;
+	return (node);
+}

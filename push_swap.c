@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:00:59 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/21 06:04:06 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/22 02:42:37 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,63 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-t_list *make_node(int value)
+void free_nodes(t_node *no)
 {
-	t_list *new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = value;
-	new_node->next = NULL;
-	return new_node;
+	t_node *aux;
+
+	aux = no;
+	while(aux)
+	{
+		aux = no->next;
+		free(no);
+		no = aux;
+	}
+	no = NULL;
 }
 
-t_list *insert_to_head(t_list **head, t_list *node_to_insert)
+void print_no(t_node *no)
 {
-	node_to_insert->next = *head;
-	*head = node_to_insert;
-	return node_to_insert;
+	t_node *aux;
+
+	aux = no;
+	while(aux)
+	{
+		printf("Valor do nó: %d\n", aux->value);
+		aux = aux->next;
+	}
+	printf("\n-----------------------\n");
+}
+
+void push(t_node **send, t_node **recep)
+{
+	t_node *aux;
+	t_node *temp;
+	
+	aux = new_list(find_last(*send)->value);
+	add_last(recep, aux);
+	temp = *send;
+	while (temp->next->next)
+		temp = temp->next;
+	free(temp->next);
+	temp->next = 0;
 }
 
 int main(void)
 {
-	t_list *head1;
-	t_list *temp;
-	
-	int i = 0;
-	head1 = NULL;
-	while (i++ < 10)
-	{
-		temp = make_node(i);
-		ft_lstadd_back(&head1, temp);
-	}
-	ft_lstadd_back(&head1, temp);
-	// print_list(head1);
-	printf("Content: %d\n", temp->content);
-	printf("Addess: %p\n", temp->next);
+	t_node *no1;
+	t_node *no2;
+
+	no1 = 0;
+	no2 = 0;
+	add_last(&no1, new_list(10));
+	add_last(&no1, new_list(2));
+	add_last(&no1, new_list(155));
+
+	push(&no1, &no2);
+	push(&no1, &no2);
+	print_no(no1);
+	print_no(no2);
+	free_nodes(no1);
+	free_nodes(no2);
 	return (0);
 }
-
-

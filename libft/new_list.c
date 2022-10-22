@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   new_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/21 02:15:02 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 02:13:44 by lsantana         ###   ########.fr       */
+/*   Created: 2022/10/22 01:56:14 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/22 02:13:36 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../push_swap.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct s_node
+t_node *new_list(int num)
 {
-	int				value;
-	struct s_node	*next;
-}			t_node;
-
-t_node *new_list(int num);
-t_node *find_last(t_node *node);
-void add_last(t_node **node, t_node *to_add);
-
-#endif
+	t_node *new;
+	
+	new = (t_node *)malloc(sizeof(t_node));
+	if (!new)
+		return (NULL);
+	new->value = num;
+	new->next = 0;
+	return (new);
+}

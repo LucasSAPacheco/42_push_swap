@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   add_front.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 19:40:44 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/21 05:51:31 by lsantana         ###   ########.fr       */
+/*   Created: 2022/10/22 03:43:30 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/22 03:44:34 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void add_front(t_node *node, t_node *to_add)
 {
-	t_list	*aux;
-
-	if (!lst)
-		return (lst);
-	aux = lst;
-	while (aux->next)
-	{
-		aux = aux->next;
-	}
-	return (aux);
+	
 }
