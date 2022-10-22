@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:00:59 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 06:36:46 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/22 06:43:23 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ int main(void)
 	swap(&no2, "sb");
 	r_rotate(&no2, "rrb");
 	push2dot0(&no1, &no2, "pb");
+	r_rotate(&no2, "rrb");
 	print_stacks(no1, no2);
 	free_nodes(no1);
 	free_nodes(no2);
