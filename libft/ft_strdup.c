@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 01:56:14 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 19:24:31 by lsantana         ###   ########.fr       */
+/*   Created: 2022/06/11 15:04:12 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/24 21:13:18 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_node *new_node(int num)
+char	*ft_strdup(const char *str)
 {
-	t_node *new;
-	
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
+	char	*new_str;
+	int		i;
+
+	i = 0;
+	new_str = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!new_str)
 		return (NULL);
-	new->value = num;
-	new->next = 0;
-	return (new);
+	while (str[i])
+	{
+		new_str[i] = str[i];
+		i++;
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }

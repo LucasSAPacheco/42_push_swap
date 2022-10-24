@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   picked_i_or_d.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 01:56:14 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 19:24:31 by lsantana         ###   ########.fr       */
+/*   Created: 2022/07/19 02:34:16 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/24 21:39:34 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../ft_printf.h"
 
-t_node *new_node(int num)
+void	picked_i_or_d(int n, int *count)
 {
-	t_node *new;
-	
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->value = num;
-	new->next = 0;
-	return (new);
+	char	*new_str;
+
+	new_str = ft_itoa(n);
+	ft_putstr_fd(new_str, 1);
+	*count += ft_strlen(new_str);
+	free(new_str);
 }

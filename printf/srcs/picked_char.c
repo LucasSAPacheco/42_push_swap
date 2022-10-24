@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   picked_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 01:56:14 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 19:24:31 by lsantana         ###   ########.fr       */
+/*   Created: 2022/07/15 22:19:20 by lsantana          #+#    #+#             */
+/*   Updated: 2022/07/24 01:02:05 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../ft_printf.h"
 
-t_node *new_node(int num)
+void	picked_char(int c, int *count)
 {
-	t_node *new;
-	
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->value = num;
-	new->next = 0;
-	return (new);
+	*count += 1;
+	write (1, &c, 1);
 }

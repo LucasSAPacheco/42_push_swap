@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 01:56:14 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 19:24:31 by lsantana         ###   ########.fr       */
+/*   Created: 2022/05/31 23:06:28 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/24 21:13:21 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_node *new_node(int num)
+size_t	ft_strlen(char const *s)
 {
-	t_node *new;
-	
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->value = num;
-	new->next = 0;
-	return (new);
+	size_t	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

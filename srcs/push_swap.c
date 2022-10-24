@@ -6,11 +6,11 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:00:59 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 06:43:23 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/24 21:48:00 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 #include "stdio.h"
 #include "stdlib.h"
 
@@ -71,28 +71,14 @@ void    print_stacks(t_node *a, t_node *b)
     printf("\t A\t\t B\n");
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
 	t_node *no1;
 	t_node *no2;
 
 	no1 = 0;
 	no2 = 0;
-	add_last(&no1, new_node(10));
-	add_last(&no1, new_node(2));
-	add_last(&no1, new_node(155));
-	add_front(&no1, new_node(36));
-	add_front(&no1, new_node(69));
-	add_front(&no1, new_node(100));
-	push2dot0(&no1, &no2, "pb");
-	push2dot0(&no1, &no2, "pb");
-	push2dot0(&no1, &no2, "pb");
-	push2dot0(&no1, &no2, "pb");
-	add_front(&no1, new_node(20));
-	swap(&no2, "sb");
-	r_rotate(&no2, "rrb");
-	push2dot0(&no1, &no2, "pb");
-	r_rotate(&no2, "rrb");
+	check_errors(argc, argv, &no1);
 	print_stacks(no1, no2);
 	free_nodes(no1);
 	free_nodes(no2);

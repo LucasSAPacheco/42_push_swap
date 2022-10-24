@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_node.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 01:56:14 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 19:24:31 by lsantana         ###   ########.fr       */
+/*   Created: 2022/10/24 21:15:12 by lsantana          #+#    #+#             */
+/*   Updated: 2022/10/24 21:40:04 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_node *new_node(int num)
+int	ft_atoi(const char *nptr)
 {
-	t_node *new;
-	
-	new = (t_node *)malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->value = num;
-	new->next = 0;
-	return (new);
+	int	i;
+	int	sign;
+	int	result;
+
+	i = 0;
+	sign = 1;
+	result = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+	{
+		i++;
+	}
+	if (nptr[i] == '+' || nptr[i] == '-')
+	{
+		if (nptr[i] == '-')
+		{
+			sign = sign * -1;
+		}
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		result = (nptr[i] - '0') + (result * 10);
+		i++;
+	}
+	return (result * sign);
 }
