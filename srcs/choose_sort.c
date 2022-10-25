@@ -36,11 +36,34 @@ void sort_three(t_node **node, int index)
 	}
 }
 
+void sort_four(t_node **node1, t_node **node2, int index)
+{
+	if (index == 0)
+	{
+		push(node1, node2, "pb");
+		sort_three(node1, index);
+		push(node2, node1, "pa");
+		rotate(node1, "ra");
+	}
+	else if (index == 3)
+	{
+		r_rotate(node1, "rra");
+		push(node1, node2, "pb");
+		sort_three(node1, index);
+		push(node2, node1, "pa");
+		rotate(node1, "ra");
+	}
+	else
+	{
+		rotate(node1, "ra");
+		sort_four(node1, node2, index - 1);
+	}
+}
+
 void choose_sort(t_node **no1, t_node **no2, int argc)
 {
 	int saved_index;
 
-	(void)no2;
 	saved_index = search_bigger(no1);
 	if (check_order(no1) == 0)
 		return;
@@ -51,7 +74,7 @@ void choose_sort(t_node **no1, t_node **no2, int argc)
 	}
 	else if (argc == 3)
 		sort_three(no1, saved_index);
-	// else if (argc == 4)
-	// 	sort_four(no1, no2, saved_index);
+	else if (argc == 4)
+		sort_four(no1, no2, saved_index);
 	return;
 }

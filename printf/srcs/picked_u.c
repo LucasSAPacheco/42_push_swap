@@ -17,8 +17,6 @@ static int	ft_check_size_u(unsigned int n)
 	unsigned int	i;
 
 	i = 1;
-	if (n < 0)
-		i++;
 	while (n / 10)
 	{
 		n /= 10;
