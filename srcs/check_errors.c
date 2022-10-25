@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:56:31 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/24 21:48:54 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/24 22:28:22 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,13 @@ void check_errors(int argc, char **argv, t_node **node)
 		ft_printf("Error\n");
 		exit (0);
 	}
-	if (argc == 2)
+	if (argc >= 2)
 	{
-		add_front(node, new_node(ft_atoi(argv[1])));
+		while (argc > 1)
+		{
+			add_front(node, new_node(ft_atoi(argv[argc - 1])));
+			argc--;
+		}
 		return ;
 	}
-	else
-		return;
 }

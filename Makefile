@@ -8,7 +8,8 @@ SRCS = libft/add_front.c libft/add_last.c libft/find_last.c libft/ft_atoi.c \
 		libft/new_node.c printf/srcs/picked_char.c printf/srcs/picked_i_or_d.c \
 		printf/srcs/picked_ito_low_hex.c printf/srcs/picked_ito_up_hex.c \
 		printf/srcs/picked_pointer.c printf/srcs/picked_str.c printf/srcs/picked_u.c \
-		printf/ft_printf.c srcs/check_errors.c srcs/utils.c srcs/push_swap.c
+		printf/ft_printf.c srcs/check_errors.c srcs/utils.c srcs/push_swap.c \
+		srcs/choose_sort.c
 
 OBJS	= $(SRCS:.c=.o)
 

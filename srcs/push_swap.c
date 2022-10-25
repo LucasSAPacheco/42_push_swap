@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:00:59 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/24 21:48:00 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/24 22:30:17 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int main(int argc, char **argv)
 	no1 = 0;
 	no2 = 0;
 	check_errors(argc, argv, &no1);
+	choose_sort(&no1, &no2, argc - 1);
 	print_stacks(no1, no2);
 	free_nodes(no1);
 	free_nodes(no2);
