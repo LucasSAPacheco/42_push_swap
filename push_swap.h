@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lousin <lousin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:15:02 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 02:32:43 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/25 00:19:43 by lousin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,12 @@ int				check_argv(char **argv, int argc);
 
 // Sort Functions
 void			choose_sort(t_node **no1, t_node **no2, int argc);
-void			sort_three(t_node **node, int index);
+void			sort_three(t_node **node);
 void			sort_two(t_node **no1);
 int				check_order(t_node **node);
 int				search_bigger(t_node **node);
+int 			search_lower(t_node **node);
+int				find_size(t_node **node);
+int 			check_rev_order(t_node **node);
 
 #endif

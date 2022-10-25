@@ -1,0 +1,5 @@
+ARG=$(shuf -i 0-1000 -n 4) && ./pushswap $ARG #ORIGINAL
+
+ARG=$(shuf -i 0-5 -n 4) && ./push_swap $ARG #teste com 4 digitos
+ARG=$(shuf -i 0-5 -n 5) && ./push_swap $ARG #teste com 5 digitos
+ARG=$(shuf -i 0-5 -n 5) && ./push_swap $ARG | wc -l
