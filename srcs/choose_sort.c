@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   choose_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lousin <lousin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 21:54:15 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 00:33:44 by lousin           ###   ########.fr       */
+/*   Updated: 2022/10/25 17:37:00 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,52 +92,8 @@ void sort_five(t_node **node1, t_node **node2)
 	}
 }
 
-void sort_more(t_node **node1, t_node **node2, int size)
-{
-	int index;
-	t_node *aux;
-
-	aux = (*node2);
-	index = search_lower(node1);
-	// if (size <= 5)
-	// 	sort_five(node1, node2);
-	if (index == 0)
-	{
-		push(node1, node2, "pb");
-		if(!check_rev_order(node1))
-		{
-			sort_more(node1, node2, size);
-		}
-	}
-	else if (index == (size - 1))
-	{
-		r_rotate(node1, "rra");
-		push(node1, node2, "pb");
-		sort_more(node1, node2, size);
-	}
-	else if ((size / index) > 2)
-	{
-		rotate(node1, "ra");
-		sort_more(node1, node2, size);
-	}
-	else if ((size / index) < 2)
-	{
-		r_rotate(node1, "rra");
-		sort_more(node1, node2, size);
-	}
-	while (aux)
-	{
-		push(node2, node1, "pa");
-		aux = aux->next;
-		push(node2, node1, "pa");
-	}
-}
-
 void choose_sort(t_node **no1, t_node **no2, int argc)
 {
-	int size;
-
-	size = find_size(no1);
 	if (check_order(no1) == 0)
 		return;
 	if (argc == 2)
@@ -151,8 +107,6 @@ void choose_sort(t_node **no1, t_node **no2, int argc)
 		sort_four(no1, no2);
 	else if (argc == 5)
 		sort_five(no1, no2);
-	else
-		sort_more(no1, no2, size);
 	check_order(no1);
 	return;
 }
