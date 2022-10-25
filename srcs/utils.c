@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:47:00 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 02:05:10 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/25 02:27:42 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,22 +85,14 @@ int search_bigger(t_node **node)
 int check_order(t_node **node)
 {
 	t_node *aux;
-	int check;
-
+	
 	aux = *node;
-	check = aux->value;
-	while (aux->value >= check)
+	while (aux)
 	{
-		if (aux->next == NULL)
-		{
-			ft_printf("The order is ok!\n");
-			return (0);
-		}
+		if (aux->next != NULL && aux->value > aux->next->value)
+			return (-1);
 		aux = aux->next;
 	}
-	if (aux->value < check)
-	{
-		return (-1);
-	}
+	ft_printf("The order is ok!\n");
 	return (0);
 }

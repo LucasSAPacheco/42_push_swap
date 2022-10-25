@@ -6,13 +6,13 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 21:54:15 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 01:49:44 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/25 02:55:26 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void two_arguments(t_node **no1)
+void sort_two(t_node **no1)
 {
 	if ((*no1)->value > (*no1)->next->value)
 		swap(no1, "sa");
@@ -20,24 +20,38 @@ void two_arguments(t_node **no1)
 		return ;
 }
 
-// void three_arguments(t_node **node, int bigger)
-// {
-	
-// }
+void sort_three(t_node **node, int index)
+{
+	if (index == 2)
+		sort_two(node);
+	else if (index == 1)
+	{
+		r_rotate(node, "rra");
+		sort_two(node);
+	}
+	else
+	{
+		rotate(node, "ra");
+		sort_two(node);
+	}
+}
 
 void choose_sort(t_node **no1, t_node **no2, int argc)
 {
-	int buffer;
+	int saved_index;
 
-	buffer = search_bigger(no1);
-	ft_printf("%d\n", buffer);
+	(void)no2;
+	saved_index = search_bigger(no1);
 	if (check_order(no1) == 0)
 		return;
-	(void)no2;
 	if (argc == 2)
-		two_arguments(no1);
-		
-	// else if (argc == 3)
-	// 	three_arguments(no1, buffer);
+	{
+		sort_two(no1);
+		check_order(no1);
+	}
+	else if (argc == 3)
+		sort_three(no1, saved_index);
+	// else if (argc == 4)
+	// 	sort_four(no1, no2, saved_index);
 	return;
 }
