@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lousin <lousin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:15:02 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 16:01:33 by lousin           ###   ########.fr       */
+/*   Updated: 2022/10/25 20:00:13 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,7 @@ int				search_bigger(t_node **node);
 int 			search_lower(t_node **node);
 int				find_size(t_node **node);
 int 			check_rev_order(t_node **node);
+t_node 			*find_middle(t_node *head);
+t_node 			*merge_sort(t_node *head);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 21:54:15 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 17:37:00 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/10/27 13:12:12 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ void choose_sort(t_node **no1, t_node **no2, int argc)
 		sort_four(no1, no2);
 	else if (argc == 5)
 		sort_five(no1, no2);
+	else if (argc > 5)
 	check_order(no1);
 	return;
 }

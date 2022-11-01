@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lousin <lousin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 23:09:25 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 00:20:18 by lousin           ###   ########.fr       */
+/*   Updated: 2022/10/27 13:11:52 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,19 @@ int find_size(t_node **node)
 		index++;
 	}
 	return (index);
+}
+
+t_node *find_middle(t_node *head)
+{
+	t_node *slow;
+	t_node *fast;
+
+	slow = head;
+	fast = head->next;
+	while (fast != NULL && fast->next != NULL)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	return(slow);
 }

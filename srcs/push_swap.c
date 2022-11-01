@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lousin <lousin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:00:59 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/24 23:50:21 by lousin           ###   ########.fr       */
+/*   Updated: 2022/10/27 13:00:00 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int main(int argc, char **argv)
 {
 	t_node *no1;
 	t_node *no2;
-
+    
 	no1 = 0;
 	no2 = 0;
 	check_errors(argc, argv, &no1);
