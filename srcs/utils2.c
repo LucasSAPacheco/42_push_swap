@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 23:09:25 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/27 13:11:52 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:07:14 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int check_rev_order(t_node **node)
 			return (-1);
 		aux = aux->next;
 	}
-	ft_printf("The rev order is ok!\n");
 	return (0);
 }
 
@@ -66,17 +65,11 @@ int find_size(t_node **node)
 	return (index);
 }
 
-t_node *find_middle(t_node *head)
+void create_list(int argc, char **argv, t_node **node)
 {
-	t_node *slow;
-	t_node *fast;
-
-	slow = head;
-	fast = head->next;
-	while (fast != NULL && fast->next != NULL)
+	while (argc > 1)
 	{
-		slow = slow->next;
-		fast = fast->next->next;
+		add_front(node, new_node(ft_atoi(argv[argc - 1])));
+		argc--;
 	}
-	return(slow);
 }

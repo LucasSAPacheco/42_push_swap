@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:47:00 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 02:27:42 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:11:03 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,5 @@ int check_order(t_node **node)
 			return (-1);
 		aux = aux->next;
 	}
-	ft_printf("The order is ok!\n");
 	return (0);
 }

@@ -9,7 +9,7 @@ SRCS = libft/add_front.c libft/add_last.c libft/find_last.c libft/ft_atoi.c \
 		printf/srcs/picked_ito_low_hex.c printf/srcs/picked_ito_up_hex.c \
 		printf/srcs/picked_pointer.c printf/srcs/picked_str.c printf/srcs/picked_u.c \
 		printf/ft_printf.c srcs/check_errors.c srcs/utils.c srcs/push_swap.c \
-		srcs/choose_sort.c srcs/utils2.c
+		srcs/choose_sort.c srcs/utils2.c srcs/order_index.c
 
 OBJS	= $(SRCS:.c=.o)
 

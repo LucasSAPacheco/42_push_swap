@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:56:31 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/31 17:59:55 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/09 20:54:42 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ int check_digit(char *str)
 	int i;
 
 	i = 0;
+	
+	if (ft_strlen(str) == 1 && (str[i] == MINUS || str[i] == PLUS))
+		return (-1);
+	i++;
 	while (str[i] >= '0' && str[i] <= '9')
-	{
 		i++;
-	}
 	if (str[i])
 		return (-1);
 	else
@@ -41,7 +43,58 @@ int check_argv(char **argv, int argc)
 	return (0);
 }
 
-void check_errors(int argc, char **argv, t_node **node)
+int check_size_arg(char **argv)
+{
+	unsigned int keep;
+	int neg;
+	int i;
+	int j;
+
+	i = 1;
+	j = 0;
+	neg = 0;
+	while (argv[i])
+	{
+		if (ft_strlen(argv[i]) > 11)
+			return (-1);
+		if (ft_strlen(argv[i]) >= 10)
+		{
+			if (argv[i][j] == MINUS || argv[i][j] == PLUS)
+			{
+				if (argv[i][j] == MINUS)
+					neg = 1;
+				j++;
+			}
+			keep = (unsigned int)ft_atoi(&argv[i][j]);
+			if (((keep > INT_W_SIG) && neg) || (keep > MAX && !neg))
+				return (-1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+int check_repeated_number(char **str)
+{
+	int i;
+	int j;
+
+	i = 1;
+	while (str[i])
+	{
+		j = 1;
+		while (str[j + 1])
+		{
+			if (str[i] == str[j + 1])
+				return (-1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+void check_errors(int argc, char **argv)
 {
 	if (argc == 1)
 		exit (0);
@@ -50,13 +103,14 @@ void check_errors(int argc, char **argv, t_node **node)
 		ft_printf("Error\n");
 		exit (0);
 	}
-	if (argc >= 2)
+	if (check_size_arg(argv) == -1)
 	{
-		while (argc > 1)
-		{
-			add_front(node, new_node(ft_atoi(argv[argc - 1])));
-			argc--;
-		}
-		return ;
+		ft_printf("Error\n");
+		exit (0);
+	}
+	if (check_repeated_number(argv) == -1)
+	{
+		ft_printf("Error\n");
+		exit (0);
 	}
 }

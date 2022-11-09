@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:15:02 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/25 20:00:13 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/09 20:23:49 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "./printf/ft_printf.h"
+# define PLUS '+'
+# define MINUS '-'
+# define MIN -2147483648
+# define INT_W_SIG 2147483648
+# define MAX 2147483647
 
 typedef struct s_node
 {
 	int				value;
+	int				index;
 	struct s_node	*next;
 }			t_node;
 
@@ -45,7 +51,7 @@ void			add_front(t_node **node, t_node *to_add);
 void			add_last(t_node **node, t_node *to_add);
 
 // Errors Functions
-void			check_errors(int argc, char **argv, t_node **node);
+void			check_errors(int argc, char **argv);
 int				check_argv(char **argv, int argc);
 
 // Sort Functions
@@ -57,7 +63,9 @@ int				search_bigger(t_node **node);
 int 			search_lower(t_node **node);
 int				find_size(t_node **node);
 int 			check_rev_order(t_node **node);
-t_node 			*find_middle(t_node *head);
-t_node 			*merge_sort(t_node *head);
+void			create_list(int argc, char **argv, t_node **node);
+void 			order_index(int argc, char **argv, t_node **node);
+void			more_than_five(t_node **no1, t_node **no2, int size);
+int				check_size_arg(char **argv);
 
 #endif

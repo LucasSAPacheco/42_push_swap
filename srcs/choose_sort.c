@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 21:54:15 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/27 13:12:12 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/09 19:47:01 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,33 @@ void sort_five(t_node **node1, t_node **node2)
 	}
 }
 
+void more_than_five(t_node **no1, t_node **no2, int size)
+{
+	int size_bits;
+	int i;
+	int j;
+
+	size_bits = 0;
+	i = 0;
+	while ((size >> size_bits))
+		size_bits++;
+	while (i < size_bits)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if ((((*no1)->index >> i) & 1) == 1)
+				rotate(no1, "ra");
+			else
+				push(no1, no2, "pb");
+			j++;
+		}
+		while ((*no2))
+			push(no2, no1, "pa");
+		i++;
+	}
+}
+
 void choose_sort(t_node **no1, t_node **no2, int argc)
 {
 	if (check_order(no1) == 0)
@@ -108,6 +135,7 @@ void choose_sort(t_node **no1, t_node **no2, int argc)
 	else if (argc == 5)
 		sort_five(no1, no2);
 	else if (argc > 5)
+		more_than_five(no1, no2, argc);
 	check_order(no1);
 	return;
 }
