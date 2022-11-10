@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:56:31 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/10 03:52:20 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:57:29 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,19 @@ int	check_size_arg(char **argv)
 	int				i;
 	int				j;
 
-	i = 1;
-	j = 0;
+	i = 0;
+	j = -1;
 	neg = 0;
-	while (argv[i++])
+	while (argv[++i])
 	{
 		if (ft_strlen(argv[i]) > 11)
 			return (-1);
 		if (ft_strlen(argv[i]) >= 10)
 		{
-			if (argv[i][j] == '-' || argv[i][j] == '+')
+			if (argv[i][++j] == '-' || argv[i][j] == '+')
 			{
 				if (argv[i][j] == '-')
 					neg = 1;
-				j++;
 			}
 			keep = (unsigned int)ft_atoi(&argv[i][j]);
 			if (((keep > INT_W_SIG) && neg) || (keep > MAX && !neg))

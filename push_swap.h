@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:15:02 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/10 03:50:54 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:59:08 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int				check_argv(char **argv, int argc);
 
 // Sort Functions
 void			choose_sort(t_node **no1, t_node **no2, int argc);
+void			sort_five(t_node **node1, t_node **node2);
+void			sort_four(t_node **node1, t_node **node2);
 void			sort_three(t_node **node);
 void			sort_two(t_node **no1);
 int				check_order(t_node **node);
