@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 02:15:02 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/09 20:23:49 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:50:54 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ void			sort_three(t_node **node);
 void			sort_two(t_node **no1);
 int				check_order(t_node **node);
 int				search_bigger(t_node **node);
-int 			search_lower(t_node **node);
+int				search_lower(t_node **node);
 int				find_size(t_node **node);
-int 			check_rev_order(t_node **node);
+int				check_rev_order(t_node **node);
 void			create_list(int argc, char **argv, t_node **node);
-void 			order_index(int argc, char **argv, t_node **node);
+void			order_index(int argc, char **argv, t_node **node);
 void			more_than_five(t_node **no1, t_node **no2, int size);
 int				check_size_arg(char **argv);
 

@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 23:09:25 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/09 21:29:46 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:49:01 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	search_lower(t_node **node)
 	return (lower);
 }
 
-int check_rev_order(t_node **node)
+int	check_rev_order(t_node **node)
 {
-	t_node *aux;
-	
+	t_node	*aux;
+
 	aux = *node;
 	while (aux)
 	{
@@ -50,10 +50,10 @@ int check_rev_order(t_node **node)
 	return (0);
 }
 
-int find_size(t_node **node)
+int	find_size(t_node **node)
 {
-	t_node *aux;
-	int index;
+	t_node	*aux;
+	int		index;
 
 	aux = (*node);
 	index = 0;
@@ -65,7 +65,7 @@ int find_size(t_node **node)
 	return (index);
 }
 
-void create_list(int argc, char **argv, t_node **node)
+void	create_list(int argc, char **argv, t_node **node)
 {
 	while (argc > 1)
 	{
@@ -74,10 +74,10 @@ void create_list(int argc, char **argv, t_node **node)
 	}
 }
 
-int check_order(t_node **node)
+int	check_order(t_node **node)
 {
-	t_node *aux;
-	
+	t_node	*aux;
+
 	aux = *node;
 	while (aux)
 	{

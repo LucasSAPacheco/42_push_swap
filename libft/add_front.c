@@ -6,13 +6,13 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 03:43:30 by lsantana          #+#    #+#             */
-/*   Updated: 2022/10/22 16:46:20 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:32:05 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void add_front(t_node **node, t_node *to_add)
+void	add_front(t_node **node, t_node *to_add)
 {
 	if (to_add == 0)
 		return ;

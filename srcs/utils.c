@@ -6,18 +6,18 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:47:00 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/09 21:30:26 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/10 03:43:04 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void push(t_node **no1, t_node **no2, char *str)
+void	push(t_node **no1, t_node **no2, char *str)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	if (*no1 == 0)
-		return;
+		return ;
 	temp = (*no1)->next;
 	(*no1)->next = *no2;
 	*no2 = *no1;
@@ -25,10 +25,10 @@ void push(t_node **no1, t_node **no2, char *str)
 	ft_printf("%s\n", str);
 }
 
-void rotate(t_node **no, char *str)
+void	rotate(t_node **no, char *str)
 {
-	t_node *temp;
-	
+	t_node	*temp;
+
 	temp = (*no)->next;
 	find_last(*no)->next = *no;
 	(*no)->next = NULL;
@@ -36,9 +36,9 @@ void rotate(t_node **no, char *str)
 	ft_printf("%s\n", str);
 }
 
-void swap(t_node **no, char *str)
+void	swap(t_node **no, char *str)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	temp = (*no)->next;
 	(*no)->next = (*no)->next->next;
@@ -47,9 +47,9 @@ void swap(t_node **no, char *str)
 	ft_printf("%s\n", str);
 }
 
-void r_rotate(t_node **no, char *str)
+void	r_rotate(t_node **no, char *str)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	temp = find_last(*no);
 	before_last(*no)->next = NULL;
@@ -58,12 +58,12 @@ void r_rotate(t_node **no, char *str)
 	ft_printf("%s\n", str);
 }
 
-int search_bigger(t_node **node)
+int	search_bigger(t_node **node)
 {
-	t_node *aux;
-	int keep;
-	int index;
-	int bigger;
+	t_node	*aux;
+	int		keep;
+	int		index;
+	int		bigger;
 
 	aux = (*node);
 	index = 0;
