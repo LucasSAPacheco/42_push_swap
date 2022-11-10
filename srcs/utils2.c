@@ -6,18 +6,18 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 23:09:25 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/07 17:07:14 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/09 21:18:44 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int search_lower(t_node **node)
+int	search_lower(t_node **node)
 {
-	t_node *aux;
-	int keep;
-	int index;
-	int lower;
+	t_node	*aux;
+	int		keep;
+	int		index;
+	int		lower;
 
 	aux = (*node);
 	index = 0;

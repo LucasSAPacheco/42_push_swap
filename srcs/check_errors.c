@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:56:31 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/09 21:01:42 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/09 21:17:52 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ int check_digit(char *str)
 
 	i = 0;
 	
-	if (ft_strlen(str) == 1 && (str[i] == MINUS || str[i] == PLUS))
+	if (ft_strlen(str) == 1 && (str[i] == '-' || str[i] == '+'))
 		return (-1);
-	i++;
 	while (str[i] >= '0' && str[i] <= '9')
 		i++;
 	if (str[i])
@@ -59,9 +58,9 @@ int check_size_arg(char **argv)
 			return (-1);
 		if (ft_strlen(argv[i]) >= 10)
 		{
-			if (argv[i][j] == MINUS || argv[i][j] == PLUS)
+			if (argv[i][j] == '-' || argv[i][j] == '+')
 			{
-				if (argv[i][j] == MINUS)
+				if (argv[i][j] == '-')
 					neg = 1;
 				j++;
 			}
@@ -85,7 +84,7 @@ int check_repeated_number(char **str)
 		j = i;
 		while (str[j + 1])
 		{
-			if (str[i] == str[j + 1])
+			if (ft_atoi(str[i]) == ft_atoi(str[j + 1]))
 				return (-1);
 			j++;
 		}
@@ -113,5 +112,4 @@ void check_errors(int argc, char **argv)
 		ft_printf("Error\n");
 		exit (0);
 	}
-	ft_printf("REPEATED CERTO\n");
 }
