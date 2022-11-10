@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 04:47:00 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/07 17:11:03 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/09 21:30:26 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,18 +80,4 @@ int search_bigger(t_node **node)
 		index++;
 	}
 	return (bigger);
-}
-
-int check_order(t_node **node)
-{
-	t_node *aux;
-	
-	aux = *node;
-	while (aux)
-	{
-		if (aux->next != NULL && aux->value > aux->next->value)
-			return (-1);
-		aux = aux->next;
-	}
-	return (0);
 }

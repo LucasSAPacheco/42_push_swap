@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 23:09:25 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/09 21:18:44 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/09 21:29:46 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,18 @@ void create_list(int argc, char **argv, t_node **node)
 		add_front(node, new_node(ft_atoi(argv[argc - 1])));
 		argc--;
 	}
+}
+
+int check_order(t_node **node)
+{
+	t_node *aux;
+	
+	aux = *node;
+	while (aux)
+	{
+		if (aux->next != NULL && aux->value > aux->next->value)
+			return (-1);
+		aux = aux->next;
+	}
+	return (0);
 }
