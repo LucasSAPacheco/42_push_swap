@@ -6,7 +6,7 @@
 /*   By: lsantana <lsantana@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:56:31 by lsantana          #+#    #+#             */
-/*   Updated: 2022/11/09 20:54:42 by lsantana         ###   ########.fr       */
+/*   Updated: 2022/11/09 21:01:42 by lsantana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int check_repeated_number(char **str)
 	i = 1;
 	while (str[i])
 	{
-		j = 1;
+		j = i;
 		while (str[j + 1])
 		{
 			if (str[i] == str[j + 1])
@@ -113,4 +113,5 @@ void check_errors(int argc, char **argv)
 		ft_printf("Error\n");
 		exit (0);
 	}
+	ft_printf("REPEATED CERTO\n");
 }
